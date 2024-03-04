@@ -1,0 +1,19 @@
+.filter__title{
+  text-align: center;
+  font-weight: 700;
+}
+
+.filter__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.filter__input-brand{
+  margin-left: 10px;
+}
+
+.filter__input-price{
+  margin-left: 10px;
+}

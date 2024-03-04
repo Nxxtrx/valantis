@@ -1,0 +1,14 @@
+.search{
+  margin-right: 20px;
+}
+
+.search__label{
+  font-size: 15px;
+}
+
+.search__input{
+  margin-left: 10px;
+  outline: none;
+  min-width: 300px;
+}
+

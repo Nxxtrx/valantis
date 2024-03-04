@@ -1,0 +1,33 @@
+.product__list {
+  margin: 20px;
+  min-height: 541px;
+  padding: 0;
+}
+
+.product__item{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed black;
+}
+
+.product__item:first-child {
+  border-top: 1px dashed black;
+}
+
+.product__id{
+  color: #4e4e4e;
+  font-weight: 500;
+}
+
+.product__brand-name{
+  font-weight: 700;
+  color: #3a3a3a;
+}
+
+.products__pagination{
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
