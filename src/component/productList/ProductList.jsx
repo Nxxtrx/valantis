@@ -1,12 +1,10 @@
 import React from 'react'
 import './ProductList.css'
 
-
-
 function ProductList({itemList, isLoading}) {
   return (
     <section className='products'>
-      <h2 className='product__title'>Список продуктов</h2>
+      <h1 className='product__title'>Список продуктов</h1>
       <ul className='product__list'>
         {isLoading 
         ?<p>Идет загрузка...</p>

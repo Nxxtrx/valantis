@@ -6,11 +6,12 @@ class ProductApi {
     this._headers = headers;
   }
 
-  _check(res) {
+  _check(res, callback) {
     if(res.ok) {
       return res.json();
     }else {
-      return Promise.reject(`Ошибка: ${res.status}`);
+      console.error(`Ошибка: ${res.status}`);
+      return callback();
     }
   }
 
@@ -23,7 +24,7 @@ class ProductApi {
         "action": "get_ids",
         "params": {"offset": (productPage - 1) * 50, "limit": 50}
       })
-    }).then((res) => this._check(res))
+    }).then((res) => this._check(res, () => this.getProductId(productPage)))
   }
 
   getProductListLength() {
@@ -34,7 +35,7 @@ class ProductApi {
       body: JSON.stringify({
         "action": "get_ids",
       })
-    }).then((res) => this._check(res))
+    }).then((res) => this._check(res, () => this.getProductListLength()))
   }
 
   getProductList(itemsIdList) {
@@ -46,7 +47,7 @@ class ProductApi {
           "action": "get_items",
           "params": {"ids": itemsIdList}
         })
-      }).then((res) => res.json())
+      }).then((res) => this._check(res, () => this.getProductList(itemsIdList)))
   }
 
   getBrands(){
@@ -58,7 +59,7 @@ class ProductApi {
         "action": "get_fields",
         "params": {"field": "brand"}
       })
-    }).then((res) => res.json())
+    }).then((res) => this._check(res, () => this.getBrands()))
   }
 
   filterProductList(filterList){
@@ -70,7 +71,7 @@ class ProductApi {
         "action": "filter",
         "params": filterList
       })
-    }).then((res) => res.json())
+    }).then((res) => this._check(res, () => this.filterProductList(filterList)))
   }
 
 }

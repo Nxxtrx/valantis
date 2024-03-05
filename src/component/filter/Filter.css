@@ -1,19 +1,33 @@
 .filter__title{
-  text-align: center;
+  margin-left: 20px;
   font-weight: 700;
 }
 
 .filter__container{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 40px;
   align-items: center;
   margin: 0 20px;
 }
 
 .filter__input-brand{
+  
   margin-left: 10px;
 }
 
 .filter__input-price{
   margin-left: 10px;
+}
+
+.filter__btn-submit{
+  margin-right: 10px;
+}
+
+@media (max-width: 950px) {
+  .filter__container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }

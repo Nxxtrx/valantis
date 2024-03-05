@@ -26,8 +26,6 @@
   color: #3a3a3a;
 }
 
-.products__pagination{
-  float: right;
-  margin-top: 20px;
-  margin-right: 20px;
+.product__title{
+  margin-left: 20px;
 }
