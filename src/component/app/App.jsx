@@ -3,7 +3,7 @@ import { Pagination } from '@mui/material'
 import ProductList from '../productList/ProductList';
 import Filter from '../filter/Filter';
 import { productApi } from '../../api/ProductApi';
-import uniqueArray from '../../utlis/uniqueArray';
+import uniqueArray from '../../utils/uniqueArray';
 import './App.css';
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
   
   return (
     <div className="App">
-      <Filter brandList={brandList} filterProduct={filterProduct} setProductPage={setProductPage} setIsSearch={setIsSearch}/>
+      <Filter brandList={brandList} filterProduct={filterProduct} setIsSearch={setIsSearch}/>
       <ProductList itemList={itemList} isLoading={isLoading}/>
       {pages > 1 && !isSearch && !isLoading
       ? <Pagination className='products__pagination' 

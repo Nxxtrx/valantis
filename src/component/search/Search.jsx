@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Search.css'
 
 function Search({setFilter, filterList}) {
-  const [value, setValue] = useState('')
-
   const handleChange = (e) => {
     e.preventDefault()
-    setValue(e.target.value)
     setFilter({product: e.target.value})
   }
 

@@ -11,7 +11,7 @@ class ProductApi {
       return res.json();
     }else {
       console.error(`Ошибка: ${res.status}`);
-      // return callback();
+      return callback();
     }
   }
 
@@ -77,7 +77,7 @@ class ProductApi {
 }
 
 export const productApi = new ProductApi({
-  baseUrl: '/',
+  baseUrl: 'https://api.valantis.store:41000/',
   headers: {
     'Content-Type': 'application/json',
     'X-Auth': md5(`Valantis_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}`),

@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import Search from '../search/Search'
 import './Filter.css'
 
-function Filter({brandList, filterProduct, setProductPage, setIsSearch}) {
+function Filter({brandList, filterProduct, setIsSearch}) {
   const [filterList, setFilterList] = useState({})
 
   function handleBrandChange(e) {
-    setFilterList({brand: e.target.value });
+    if(e.target.value === ''){
+      setFilterList({})
+    } else {
+      setFilterList({brand: e.target.value });
+    }
   }
 
   function handlePriceChange(e) {
@@ -37,7 +41,7 @@ function Filter({brandList, filterProduct, setProductPage, setIsSearch}) {
             )}
           </select>
         </label>
-        <label >Стоимость
+        <label className='filter__label-price'>Стоимость
           <input className='filter__input-price' type="number" min={0} value={filterList.price ? filterList.price : ''} onChange={handlePriceChange} step={100}/>
         </label>
         <Search setFilter={setFilterList} filterList={filterList}/>
